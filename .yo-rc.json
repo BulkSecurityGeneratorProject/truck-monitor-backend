@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.truckmonitor",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "monolith",
+    "baseName": "truckMonitor",
+    "packageName": "com.truckmonitor",
+    "packageFolder": "com/truckmonitor",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NGM3OGNjOWQ1ZjAyMTJjNTMxMWJmZDI4OTBjNmQ4MzE2N2JlMWU3ZGE2MTM0YjkxZThmZmNjZGU2YTUxYzY0YTU2ZmZjMGM0MTY3ODc3OTQ3NzNjZjEwOGU2ODZkMzBiZjVkNzYyOTliZTkxNjExYzVhM2M2NDJlZTBiYTQyNTg=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "pt-br"
+    ],
+    "skipClient": true
+  }
+}
