@@ -1,5 +1,7 @@
 # T Monitor - Backend
 
+[![CircleCI](https://circleci.com/gh/iuricmp/truck-monitor-backend.svg?style=svg)](https://circleci.com/gh/iuricmp/truck-monitor-backend)
+
 <!-- TOC -->
 - [Development](#Development)
   - [Testing](#Testing)
