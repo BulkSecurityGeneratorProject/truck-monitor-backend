@@ -35,6 +35,11 @@
       "en",
       "pt-br"
     ],
-    "skipClient": true
+    "skipClient": true,
+    "appsFolders": [
+      "man-jhipster"
+    ],
+    "directoryPath": "../",
+    "monitoring": "no"
   }
 }
