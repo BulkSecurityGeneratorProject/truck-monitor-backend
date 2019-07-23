@@ -32,13 +32,6 @@ public class TruckMonitorApp implements InitializingBean {
         this.env = env;
     }
 
-    /**
-     * Initializes truckMonitor.
-     * <p>
-     * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
-     * <p>
-     * You can find more information on how profiles work with JHipster on <a href="https://www.jhipster.tech/profiles/">https://www.jhipster.tech/profiles/</a>.
-     */
     @Override
     public void afterPropertiesSet() throws Exception {
         Collection<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
@@ -52,11 +45,6 @@ public class TruckMonitorApp implements InitializingBean {
         }
     }
 
-    /**
-     * Main method, used to run the application.
-     *
-     * @param args the command line arguments.
-     */
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(TruckMonitorApp.class);
         DefaultProfileUtil.addDefaultProfile(app);

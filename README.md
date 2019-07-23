@@ -1,6 +1,16 @@
-# truckMonitor
+# T Monitor - Backend
 
-This application was generated using JHipster 6.1.2, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.1.2](https://www.jhipster.tech/documentation-archive/v6.1.2).
+<!-- TOC -->
+- [Development](#Development)
+  - [Testing](#Testing)
+  - [Docker](#docker)
+    - [`Build`](#Build)
+    - [`Working with databases`](#Working-with-databases)
+- [CI](#ci)
+- [API](#api)
+- [Security (Important note)](#security)
+
+<!-- /TOC -->
 
 ## Development
 
@@ -8,94 +18,46 @@ To start your application in the dev profile, simply run:
 
     ./mvnw
 
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
-
-## Building for production
-
-### Packaging as jar
-
-To build the final jar and optimize the truckMonitor application for production, run:
-
-    ./mvnw -Pprod clean verify
-
-To ensure everything worked, run:
-
-    java -jar target/*.jar
-
-Refer to [Using JHipster in production][] for more details.
-
-### Packaging as war
-
-To package your application as a war in order to deploy it to an application server, run:
-
-    ./mvnw -Pprod,war clean verify
-
-## Testing
+### Testing
 
 To launch your application's tests, run:
 
     ./mvnw verify
 
-For more information, refer to the [Running tests page][].
+## Docker
 
-### Code quality
+### Build
 
-Sonar is used to analyse code quality. You can start a local Sonar server (accessible on http://localhost:9001) with:
+To build a Docker image using [Jib](https://github.com/GoogleContainerTools/jib):
 
-```
-docker-compose -f src/main/docker/sonar.yml up -d
-```
+With Maven, type:
 
-You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the maven plugin.
+    ./mvnw package -Pprod verify jib:dockerBuild
 
-Then, run a Sonar analysis:
+To run this image, use the Docker Compose configuration located in the src/main/docker folder of your application:
 
-```
-./mvnw -Pprod clean verify sonar:sonar
-```
+    docker-compose -f src/main/docker/app.yml up
 
-If you need to re-run the Sonar phase, please be sure to specify at least the `initialize` phase since Sonar properties are loaded from the sonar-project.properties file.
+### Working with databases
 
-```
-./mvnw initialize sonar:sonar
-```
+If you just want to start the database, and not the other services, use the Docker Compose configuration:
 
-or
+    docker-compose -f src/main/docker/postgresql.yml up
 
-For more information, refer to the [Code quality page][].
+## API
 
-## Using Docker to simplify development (optional)
+To use Swagger UI, visit this url:
 
-You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
+[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
-For example, to start a postgresql database in a docker container, run:
+## Security
 
-    docker-compose -f src/main/docker/postgresql.yml up -d
+**!! IMPORTANT !!**
 
-To stop it and remove the container, run:
+We are disabling security authentication for [/api/**](/Users/iuri.pereira/dev/iuri/man-jhipster/src/main/java/com/truckmonitor/config/SecurityConfiguration.java) and hope to start making authenticated request soon
 
-    docker-compose -f src/main/docker/postgresql.yml down
+    .antMatchers("/api/**").permitAll()
 
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a docker image of your app by running:
+## Configuration
 
-    ./mvnw -Pprod verify jib:dockerBuild
-
-Then run:
-
-    docker-compose -f src/main/docker/app.yml up -d
-
-For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
-
-## Continuous Integration (optional)
-
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
-
-[jhipster homepage and latest documentation]: https://www.jhipster.tech
-[jhipster 6.1.2 archive]: https://www.jhipster.tech/documentation-archive/v6.1.2
-[using jhipster in development]: https://www.jhipster.tech/documentation-archive/v6.1.2/development/
-[using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v6.1.2/docker-compose
-[using jhipster in production]: https://www.jhipster.tech/documentation-archive/v6.1.2/production/
-[running tests page]: https://www.jhipster.tech/documentation-archive/v6.1.2/running-tests/
-[code quality page]: https://www.jhipster.tech/documentation-archive/v6.1.2/code-quality/
-[setting up continuous integration]: https://www.jhipster.tech/documentation-archive/v6.1.2/setting-up-ci/
+This project was bootstrapped with [JHipster](https://www.jhipster.tech/). You can learn more about it and how to configure in the [JHipster documentation](https://www.jhipster.tech/).
