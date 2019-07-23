@@ -43,6 +43,8 @@ public class CacheConfiguration {
             createCache(cm, com.truckmonitor.domain.User.class.getName());
             createCache(cm, com.truckmonitor.domain.Authority.class.getName());
             createCache(cm, com.truckmonitor.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.truckmonitor.domain.Vehicle.class.getName());
+            createCache(cm, com.truckmonitor.domain.Position.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

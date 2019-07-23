@@ -1,0 +1,32 @@
+{
+    "name": "Vehicle",
+    "fields": [
+        {
+            "fieldName": "licensePlate",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "position",
+            "otherEntityRelationshipName": "vehicle",
+            "relationshipName": "lastPosition",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190723163158",
+    "entityTableName": "vehicle",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
+

@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "vehicle",
+            "otherEntityRelationshipName": "position",
+            "relationshipName": "vehicle",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "lat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "lng",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "altitude",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "speed",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "course",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "serverTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "deviceTime",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20190723163159",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "position",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "javadoc": "Task entity.\n@author The JHipster team.",
+    "name": "Position",
+    "applications": "*"
+}
