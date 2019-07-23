@@ -11,11 +11,17 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {PositionMapper.class})
 public interface VehicleMapper extends EntityMapper<VehicleDTO, Vehicle> {
 
-    @Mapping(source = "lastPosition.id", target = "lastPositionId")
     VehicleDTO toDto(Vehicle vehicle);
 
-    @Mapping(source = "lastPositionId", target = "lastPosition")
     Vehicle toEntity(VehicleDTO vehicleDTO);
+
+    @AfterMapping
+    default void setPosition(@MappingTarget VehicleDTO vehicleDTO, Vehicle vehicle) {
+        if (vehicle.getLastPosition() != null) {
+            vehicleDTO.getPosition().add(vehicle.getLastPosition().getLat());
+            vehicleDTO.getPosition().add(vehicle.getLastPosition().getLng());
+        }
+    }
 
     default Vehicle fromId(Long id) {
         if (id == null) {

@@ -1,6 +1,8 @@
 package com.truckmonitor.service.dto;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -13,8 +15,8 @@ public class VehicleDTO implements Serializable {
     @NotNull
     private String licensePlate;
 
+    private List<Double> position = new ArrayList<>();
 
-    private Long lastPositionId;
 
     public Long getId() {
         return id;
@@ -32,12 +34,12 @@ public class VehicleDTO implements Serializable {
         this.licensePlate = licensePlate;
     }
 
-    public Long getLastPositionId() {
-        return lastPositionId;
+    public List getPosition() {
+        return position;
     }
 
-    public void setLastPositionId(Long positionId) {
-        this.lastPositionId = positionId;
+    public void setPosition(List position) {
+        this.position = position;
     }
 
     @Override
@@ -66,7 +68,6 @@ public class VehicleDTO implements Serializable {
         return "VehicleDTO{" +
             "id=" + getId() +
             ", licensePlate='" + getLicensePlate() + "'" +
-            ", lastPosition=" + getLastPositionId() +
             "}";
     }
 }

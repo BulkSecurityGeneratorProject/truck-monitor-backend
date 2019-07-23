@@ -78,15 +78,5 @@
         </loadData>
     </changeSet>
 
-    <changeSet author="truckMonitor" id="20190723173160-1-data">
-        <loadUpdateData
-                        file="config/liquibase/data/vehicle_last_position.csv"
-                        primaryKey="id"
-                        separator=";"
-                        tableName="vehicle">
-            <column name="id" type="numeric"/>
-            <column name="last_position_id" type="numeric"/>
-        </loadUpdateData>
-    </changeSet>
 
 </databaseChangeLog>

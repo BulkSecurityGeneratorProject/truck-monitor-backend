@@ -14,5 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="position"/>
 
+        <addUniqueConstraint
+            tableName="vehicle"
+            columnNames="last_position_id"
+            constraintName="ux_vehicle_last_position_id"/>
+
     </changeSet>
+
 </databaseChangeLog>

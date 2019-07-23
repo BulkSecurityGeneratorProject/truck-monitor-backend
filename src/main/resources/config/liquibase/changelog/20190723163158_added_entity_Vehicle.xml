@@ -19,15 +19,15 @@
                 <constraints nullable="false" />
             </column>
             <column name="last_position_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_vehicle_last_position_id" />
+                <constraints nullable="true" />
             </column>
         </createTable>
 
     </changeSet>
 
-    <changeSet id="20190723163158-1-relations" author="truckMonitor">
+    <!--
 
-    </changeSet>
+    -->
 
     <!--
         Load sample data generated with Faker.js
@@ -44,6 +44,7 @@
                   tableName="vehicle">
             <column name="id" type="numeric"/>
             <column name="license_plate" type="string"/>
+            <column name="last_position_id" type="numeric"/>
         </loadData>
     </changeSet>
 
